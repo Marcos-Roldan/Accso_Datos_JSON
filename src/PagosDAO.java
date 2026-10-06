@@ -6,7 +6,7 @@ import java.util.*;
 
 public class PagosDAO {
 
-    private Almacenamiento almacenamiento;
+    private final Almacenamiento almacenamiento;
 
     public PagosDAO(Almacenamiento almacenamiento) {
         this.almacenamiento = almacenamiento;

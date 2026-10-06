@@ -14,8 +14,6 @@ public class Main {
 
         MigraCSVToJson migraCSVToJson = new Traductora();
 
-
-
         int opcion = 0;
 
         while (opcion != 6) {

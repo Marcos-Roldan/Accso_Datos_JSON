@@ -50,6 +50,10 @@ public class Cliente {
     //STRING
     @Override
     public String toString() {
-        return "id: " + id + ", nombre: " + nombre + ", telefono: " + telefono + ", matricula: " + matricula;
+        return "{" +
+                    "[" +
+                        "{id: " + id + ", nombre: " + nombre + ", telefono: " + telefono + ", matricula: " + matricula
+                     + "]"
+                + "}";
     }
 }

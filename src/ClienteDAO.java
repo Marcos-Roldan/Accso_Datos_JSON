@@ -5,7 +5,7 @@ import java.util.*;
 
 public class ClienteDAO {
 
-    private Almacenamiento almacenamiento;
+    private final Almacenamiento almacenamiento;
 
     public ClienteDAO(Almacenamiento almacenamiento) {
         this.almacenamiento = almacenamiento;

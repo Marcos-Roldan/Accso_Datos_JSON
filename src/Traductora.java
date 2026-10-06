@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -9,41 +8,37 @@ public class Traductora implements MigraCSVToJson {
 
     @Override
     public void almacenamientoJSONCliente(Cliente cliente) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("¿Hay ficheros CSV que migrar?");
-        System.out.println("1. Si");
-        System.out.println("2. No");
+        int opcion;
 
-        int opcion = sc.nextInt();
+        do {
+            Scanner sc = new Scanner(System.in);
 
-        if(opcion == 2) {
-            Path directorio = Path.of("datos");
-            Path archivo = directorio.resolve("clientes.json");
-
-            try {
-                Files.createDirectories(directorio);
-
-                if (Files.notExists(archivo)) {
-                    Files.createFile(archivo);
-                    System.out.println("Almacenamineto JSON creado por primera vez.");
-                }
-
-                System.out.println("No hay ficheros que migrar");
-                System.out.println("Se ha creado un almacenamiento JSON");
-            } catch (IOException e) {
-                System.out.println("Error al inicializar la estructura: " + e.getMessage()); //
-            }
-        } else if (opcion == 1) {
-            System.out.println("¿Quieres migrar sobre las rutas de los ficheros CSV?");
+            System.out.println("¿Hay ficheros CSV que migrar?");
             System.out.println("1. Si");
             System.out.println("2. No");
 
-            int opcion1 = sc.nextInt();
+            opcion = sc.nextInt();
 
-            if(opcion1 == 2) {
-                System.out.println("Has rechazado la migracion");
-            } else if(opcion1 == 1) {
+            if(opcion == 2) {
+                Path directorio = Path.of("datos");
+                Path archivo = directorio.resolve("clientes.json");
+
+                try {
+                    Files.createDirectories(directorio);
+
+                    if (Files.notExists(archivo)) {
+                        Files.createFile(archivo);
+                        System.out.println("Almacenamineto JSON creado por primera vez.");
+                    }
+
+                    System.out.println("No hay ficheros que migrar");
+                    System.out.println("Se ha creado un almacenamiento JSON");
+
+                } catch (IOException e) {
+                    System.out.println("Error al inicializar la estructura: " + e.getMessage());
+                }
+            } else if (opcion == 1) {
                 Path origen = Path.of("datos", "clientes.csv");
                 Path destino = Path.of("datos", "clientes_backup.csv");
 
@@ -69,9 +64,7 @@ public class Traductora implements MigraCSVToJson {
             } else {
                 System.out.println("Opcion no valida");
             }
+        } while(opcion != 1 && opcion != 2);
 
-        } else {
-            System.out.println("Opcion no valida");
-        }
     }
 }
