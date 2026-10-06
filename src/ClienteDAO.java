@@ -6,14 +6,9 @@ import java.util.*;
 public class ClienteDAO {
 
     private Almacenamiento almacenamiento;
-    private MigraCSVToJson migraCSVToJson;
 
     public ClienteDAO(Almacenamiento almacenamiento) {
         this.almacenamiento = almacenamiento;
-    }
-
-    public ClienteDAO(MigraCSVToJson migraCSVToJson) {
-        this.migraCSVToJson = migraCSVToJson;
     }
 
     public void AltaCliente() {

@@ -13,8 +13,6 @@ public class Main {
         PagosDAO pagosDAO = new PagosDAO(almacenamiento);
 
         MigraCSVToJson migraCSVToJson = new Traductora();
-        ClienteDAO clienteDAO1 = new ClienteDAO((Traductora) migraCSVToJson);
-        PagosDAO pagosDAO1 = new PagosDAO((Traductora) migraCSVToJson);
 
 
 

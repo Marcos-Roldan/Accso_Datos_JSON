@@ -7,14 +7,9 @@ import java.util.*;
 public class PagosDAO {
 
     private Almacenamiento almacenamiento;
-    private MigraCSVToJson migraCSVToJson;
 
     public PagosDAO(Almacenamiento almacenamiento) {
         this.almacenamiento = almacenamiento;
-    }
-
-    public PagosDAO(MigraCSVToJson migraCSVToJson) {
-        this.migraCSVToJson = migraCSVToJson;
     }
 
     public void ProcesarPagoRepostaje() {
