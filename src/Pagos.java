@@ -73,6 +73,5 @@ public class Pagos {
     @Override
     public String toString() {
         return "id: " + id + ", id_cliente: " + id_cliente + ", fecha: " + fecha + ", importe: " + importe + ", litros: " + litros + ", combustible: " + combustible;
-
     }
 }

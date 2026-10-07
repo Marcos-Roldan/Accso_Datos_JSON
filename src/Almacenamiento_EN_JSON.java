@@ -40,6 +40,9 @@ public class Almacenamiento_EN_JSON implements Almacenamiento {
 
     @Override
     public boolean escribirCliente(Cliente cliente) {
+        //1. LEER EL FICHERO
+        //2. AÑADIR EL CLIENTE
+        //3. SOBREESCRIBIR EL CLIENTE
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivoClientes, true))) {
             String linea = cliente.getId() + "," + cliente.getNombre() + "," + cliente.getTelefono() + "," + cliente.getMatricula();
             bw.write(linea);
