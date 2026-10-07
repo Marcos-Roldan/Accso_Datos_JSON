@@ -2,7 +2,7 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
 
-public class Almacenamiento_EN_JSON implements Almacenamiento {
+public class Almacenamiento_EN_CSV implements Almacenamiento {
 
     private final String archivoClientes = "clientes.csv";
     private final String archivoPagos = "pagos_repostajes.csv";

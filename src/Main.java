@@ -1,6 +1,3 @@
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Scanner;
 
 public class Main {
@@ -8,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Almacenamiento almacenamiento = new Almacenamiento_EN_JSON();
+        Almacenamiento almacenamiento = new Almacenamiento_EN_CSV();
         ClienteDAO clienteDAO = new ClienteDAO(almacenamiento);
         PagosDAO pagosDAO = new PagosDAO(almacenamiento);
 
