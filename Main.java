@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // 1. Ejecutar la traductora/migración en el arranque si procede
+        // 1. Ejecutar la traductora/migración en el arranque, solo si procede
         Traductora traductora = new Traductora();
         traductora.ejecutarMigracionSiEsNecesario();
 

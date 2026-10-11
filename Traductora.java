@@ -12,7 +12,7 @@ public class Traductora implements MigraCSVToJson {
         Path archivoClientesJson = directorio.resolve("clientes.json");
         Path archivoPagosJson = directorio.resolve("pagos.json");
 
-        // Si ya existe JSON, arranca directamente sin molestar al usuario
+        // Si ya existe JSON, arranca directamente sin decir nada al usuario
         if (Files.exists(archivoClientesJson) || Files.exists(archivoPagosJson)) {
             return;
         }
@@ -38,12 +38,12 @@ public class Traductora implements MigraCSVToJson {
                 return;
             }
 
-            // Leemos del formato CSV antiguo
+            // Leo del formato CSV antiguo
             Almacenamiento_EN_CSV csvStorage = new Almacenamiento_EN_CSV();
             List<Cliente> clientes = csvStorage.leerClientes();
             List<Pagos> pagos = csvStorage.leerPagos();
 
-            // Guardamos en JSON usando lambdas (.forEach)
+            // Guardo en JSON usando lambdas 
             AlmacenamientoJSON jsonStorage = new AlmacenamientoJSON();
             clientes.forEach(jsonStorage::escribirCliente);
             pagos.forEach(jsonStorage::escribirPagos);

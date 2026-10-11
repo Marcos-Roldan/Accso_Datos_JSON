@@ -83,7 +83,7 @@ public class AlmacenamientoJSON implements Almacenamiento {
         lista.add(cliente);
 
         StringBuilder sb = new StringBuilder("[\n");
-        // Uso de lambda con forEach para recorrer la lista y montar el JSON
+        
         lista.forEach(c -> {
             sb.append("  {\n")
               .append("    \"id\": ").append(c.getId()).append(",\n")
